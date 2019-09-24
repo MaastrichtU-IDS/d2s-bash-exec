@@ -5,8 +5,8 @@ A project to automate the download of datasets for the [data2services-pipeline](
 # Build or pull
 
 ```shell
-docker pull vemonet/data2services-download
-docker build -t vemonet/data2services-download .
+docker pull vemonet/d2s-bash-exec
+docker build -t vemonet/d2s-bash-exec .
 ```
 
 # Run
@@ -14,10 +14,7 @@ docker build -t vemonet/data2services-download .
 This command will download files in `/data/data2services`.
 
 ```shell
-docker run -it --rm -v /data/data2services:/data vemonet/data2services-download \
-	--download-datasets aeolus,pharmgkb,ctd \
-	--username my_login --password my_password \
-	--clean # to delete all files in /data/data2services
+docker run -it --rm -v /data/data2services:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
 ```
 
 More datasets can be found in `./datasets`
