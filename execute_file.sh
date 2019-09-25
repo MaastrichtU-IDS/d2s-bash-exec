@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $(pwd)
 
-if [[ $1 == "/*.sh" ]]; then 
+if [[ $1 == /*.sh ]]; then 
   # If user provides direct .sh file
   source $1
 else 
@@ -14,7 +14,7 @@ else
   done
 fi
 
-
+if [[ "/var/vwd/wd/download.sh" == "/*.sh" ]]; then echo "yes" ; else echo "no" ; fi
 
 # POSITIONAL=()
 # while [[ $# -gt 0 ]]
