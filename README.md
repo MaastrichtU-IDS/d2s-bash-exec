@@ -1,6 +1,6 @@
 # Get started
 
-A project to automate the download of datasets for the [data2services-pipeline](https://github.com/MaastrichtU-IDS/data2services-pipeline) using Shell scripts run in a [Ubuntu Docker image](https://hub.docker.com/_/ubuntu).
+Simple container to execute Bash scripts from URL (e.g. hosted on GitHub) in a [Ubuntu Docker image](https://hub.docker.com/_/ubuntu).. Mainly used to download datasets for the [Data2Services](http://d2s.semanticscience.org/) project.
 
 # Build or pull
 
@@ -17,8 +17,6 @@ This command will download files in `/data/data2services`.
 docker run -it --rm -v /data/data2services:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
 ```
 
-More datasets can be found in `./datasets`
-
 # Add a new dataset
 
 Shell scripts are executed to download each dataset. Add your own.
@@ -29,18 +27,5 @@ Shell scripts are executed to download each dataset. Add your own.
 
 See the [Wiki](https://github.com/MaastrichtU-IDS/data2services-download/wiki) for more details on common Shell download operations.
 
-# Example of datasets bundles
 
-Check in [/datasets](https://github.com/MaastrichtU-IDS/data2services-download/tree/master/datasets).
-
-```shell
-# XML
-docker run -it --rm -v /data/data2services:/data vemonet/data2services-download --download-datasets clinicaltrials,pubmed,interpro,bioproject,clinvar,dailymed,dbsnp,flybase,orphanet,pdb
-
-# TSV
-docker run -it --rm -v /data/data2services:/data vemonet/data2services-download --download-datasets stitch,pharmgkb,drugcentral,bindingdb,ncbigene,ndc,stitch,genage,ncbigene,irefindex
-
-# NCATS Translator program
-docker run -it --rm -v /data/data2services:/data vemonet/data2services-download --download-datasets gote,disgenet,pathwaycommons,biogrid,wikipathways,preppi,clinicaltrials,pubmed,kegg
-```
 
