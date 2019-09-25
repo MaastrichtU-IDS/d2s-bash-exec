@@ -1,12 +1,18 @@
 #!/bin/bash
 echo $(pwd)
-wget $1 
-# https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
-#mkdir input
-#cd input
-for filename in *.sh; do
-  source ${filename}
-done
+
+if [[ $1 == "/*.sh" ]]; then 
+  # If user provides direct .sh file
+  source $1
+else 
+  wget $1 
+  # https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
+  #mkdir input
+  #cd input
+  for filename in *.sh; do
+    source ${filename}
+  done
+fi
 
 
 
