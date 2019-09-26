@@ -1,6 +1,16 @@
 #!/bin/bash
 echo $(pwd)
 
+if [ -z "$2" ]
+then
+  # Create and change dir if output path provided
+  echo "Output path: $(pwd)"
+else
+  mkdir -p $2
+  cd $2
+  echo "Output path: $(pwd)"
+fi
+
 if [[ $1 == /*.sh ]]; then 
   # If user provides direct .sh file
   source $1
@@ -14,7 +24,7 @@ else
   done
 fi
 
-if [[ "/var/vwd/wd/download.sh" == "/*.sh" ]]; then echo "yes" ; else echo "no" ; fi
+# if [[ "/var/vwd/wd/download.sh" == /*.sh ]]; then echo "yes" ; else echo "no" ; fi
 
 # POSITIONAL=()
 # while [[ $# -gt 0 ]]
