@@ -17,6 +17,14 @@ This command will download files in `/data/data2services`.
 docker run -it --rm -v /data/data2services:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
 ```
 
+You can provide an output directory as second parameter
+
+```bash
+docker run -it --rm -v /data/data2services:/tmp/download vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh /tmp/download
+```
+
+
+
 # Add a new dataset
 
 Shell scripts are executed to download each dataset. Add your own.
