@@ -11,16 +11,24 @@ else
   echo "Output path: $(pwd)"
 fi
 
+if [ -z "$3" ]
+then
+  args=""
+else
+  # If args provided as a string
+  args=$3
+fi
+
 if [[ $1 == /*.sh ]]; then 
   # If user provides direct .sh file
-  source $1
+  source $1 $args
 else 
   wget $1 
   # https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
   #mkdir input
   #cd input
   for filename in *.sh; do
-    source ${filename}
+    source ${filename} $args
   done
 fi
 
