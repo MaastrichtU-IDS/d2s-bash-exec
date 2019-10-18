@@ -11,7 +11,8 @@ COPY . .
 
 RUN chmod a+x execute_file.sh
 
-WORKDIR /data
+WORKDIR /srv
+# WORKDIR /data
 
 ENTRYPOINT ["/app/execute_file.sh"]
 CMD []

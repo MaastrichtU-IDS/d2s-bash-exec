@@ -24,7 +24,7 @@ if [[ $1 == /*.sh ]]; then
   source $1 $args
 else 
   wget $1 
-  # https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-download/master/datasets/stitch-sample/download.sh
+  # https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download.sh
   #mkdir input
   #cd input
   for filename in *.sh; do
