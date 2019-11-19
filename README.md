@@ -2,6 +2,8 @@
 
 Simple container to execute Bash scripts from URL (e.g. hosted on GitHub) in a [Ubuntu Docker image](https://hub.docker.com/_/ubuntu).. Mainly used to download datasets for the [Data2Services](http://d2s.semanticscience.org/) project.
 
+See the [Data2Services documentation](http://d2s.semanticscience.org/) to run d2s-bash-exec as part of workflows to generate RDF knowledge graph from structured data.
+
 # Build or pull
 
 ```shell
