@@ -16,7 +16,7 @@ if [[ $1 == /*.sh ]]; then
   source $1 $2 $3 $4 $5
 else 
   wget $1 
-  # https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download.sh
+  # https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-project-template/master/datasets/stitch/download/download.sh
   #mkdir input
   #cd input
   for filename in *.sh; do
